@@ -2,7 +2,7 @@ import { API_KEY, API_URL } from "./settings";
 
 /* Hacer el transform para poder reutilizarlo en ambos endpoints */
 
-export const getGifs = ({ keyword = "monday", limit = 25, page = 0 } = {}) => {
+export const getGifs = ({ keyword = "monday", limit = 5, page = 0 } = {}) => {
   // for the pagination we need to use the offset property to get the correct "page number"
   const offset = limit * page;
 

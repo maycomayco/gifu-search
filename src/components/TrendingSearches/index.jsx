@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Spinner } from "@chakra-ui/react";
-import useIsNearScreen from "../../hooks/useIsNearScreen";
+import useNearScreen from "../../hooks/useNearScreen";
 
 /*
   - React.lazy()
@@ -14,7 +14,7 @@ const TrendingSearches = React.lazy(() => import("./TrendingSearches"));
   - this component is prioritary beacause it's has the lazy logic to handle the loading of the trending searches component
 */
 const LazyTrendingSearches = () => {
-  const { isNearScreen, fromRef } = useIsNearScreen("100px");
+  const { isNearScreen, fromRef } = useNearScreen("100px");
 
   return (
     <div ref={fromRef}>

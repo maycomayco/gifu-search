@@ -5,11 +5,11 @@ import {
   Heading,
   Link as LinkChakra,
 } from "@chakra-ui/react";
+import { Link, Route } from "wouter";
 import SearchResults from "./pages/SearchResults";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import { GifsContextProvider } from "./context/GifsContext";
-import { Link, Route } from "wouter";
 
 function App() {
   return (
@@ -22,14 +22,14 @@ function App() {
             </LinkChakra>
           </Heading>
         </Box>
-        <Box>
+        <Box w="100%">
           {/* wrap only the routes of our app with the provider */}
           <GifsContextProvider>
             {/* Set routes of the app in the declarative way */}
-            <Route component={Home} path="/"></Route>
+            <Route component={Home} path="/" />
             {/* <Route component={ListGifs} path="/gif/:keyword"></Route> */}
-            <Route component={SearchResults} path="/search/:keyword"></Route>
-            <Route component={Detail} path="/gif/:id"></Route>
+            <Route component={SearchResults} path="/search/:keyword" />
+            <Route component={Detail} path="/gif/:id" />
           </GifsContextProvider>
         </Box>
       </VStack>
